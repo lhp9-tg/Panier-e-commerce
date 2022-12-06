@@ -35,7 +35,7 @@ window.addEventListener('click', event => {
 
 
 function pokeballs () {
-    document.querySelector('.container').innerHTML = "";
+    document.querySelector('.row').innerHTML = "";
     fetch('assets/json/store.json')
         .then(response => response.json())
         .then((data) => {
@@ -51,16 +51,18 @@ function pokeballs () {
                 let price = element.price;
 
                 let anchor = document.createElement('div');
-                anchor.innerHTML = '<div class="card-body" id='+id+'>';
+                anchor.innerHTML = '<div class="card-body text-center" id='+id+'>';
                 
                 if (category == 'Pokeballs') {
+                    document.querySelector('.banner').innerHTML = ``
                     
-                    anchor.className = 'card text-center';
-                    anchor = document.querySelector('.container').appendChild(anchor);
-
+                    anchor.className = 'item card text-center';
+                    anchor = document.querySelector('.row').appendChild(anchor);
+                    
                     let cardId = document.getElementById(id);
                     
                     let cardImg = document.createElement('img');
+                    cardImg.className = 'cardImg '
                     cardImg.src = 'assets/img/'+image+'';
                     cardImg.alt = name;
                     cardImg = cardId.appendChild(cardImg);
@@ -87,9 +89,8 @@ function pokeballs () {
         });
 };
 
-
 function battleItems () {
-    document.querySelector('.container').innerHTML = "";
+    document.querySelector('.row').innerHTML = "";
     fetch('assets/json/store.json')
         .then(response => response.json())
         .then((data) => {
@@ -108,13 +109,16 @@ function battleItems () {
                 anchor.innerHTML = '<div class="card-body" id='+id+'>';
                 
                     if (category == 'Battle items') {
+                        document.querySelector('.banner').innerHTML = ``
+
 
                         anchor.className = 'card text-center';
-                        anchor = document.querySelector('.container').appendChild(anchor);
+                        anchor = document.querySelector('.row').appendChild(anchor);
     
                         let cardId = document.getElementById(id);
 
                         let cardImg = document.createElement('img');
+                        cardImg.className = 'cardImg '
                         cardImg.src = 'assets/img/'+image+'';
                         cardImg = cardId.appendChild(cardImg);
 
@@ -139,7 +143,7 @@ function battleItems () {
     };
 
 function medicine () {
-    document.querySelector('.container').innerHTML = "";
+    document.querySelector('.row').innerHTML = "";
     fetch('assets/json/store.json')
         .then(response => response.json())
         .then((data) => {
@@ -158,13 +162,15 @@ function medicine () {
                 anchor.innerHTML = '<div class="card-body" id='+id+'>';
 
                     if (category == 'Medicine') {
+                        document.querySelector('.banner').innerHTML = ``
 
                         anchor.className = 'card text-center';
-                        anchor = document.querySelector('.container').appendChild(anchor);
+                        anchor = document.querySelector('.row').appendChild(anchor);
     
                         let cardId = document.getElementById(id);
 
                         let cardImg = document.createElement('img');
+                        cardImg.className = 'cardImg '
                         cardImg.src = 'assets/img/'+image+'';
                         cardImg = cardId.appendChild(cardImg);
 
@@ -189,7 +195,7 @@ function medicine () {
     };
 
 function TMs () {
-    document.querySelector('.container').innerHTML = "";
+    document.querySelector('.row').innerHTML = "";
     fetch('assets/json/store.json')
         .then(response => response.json())
         .then((data) => {
@@ -208,13 +214,15 @@ function TMs () {
                 anchor.innerHTML = '<div class="card-body" id='+id+'>';
 
                 if (category == 'TMs') {
+                    document.querySelector('.banner').innerHTML = ``
 
                     anchor.className = 'card text-center';
-                    anchor = document.querySelector('.container').appendChild(anchor);
+                    anchor = document.querySelector('.row').appendChild(anchor);
 
                     let cardId = document.getElementById(id);
 
                     let cardImg = document.createElement('img');
+                    cardImg.className = 'cardImg1';
                     cardImg.src = 'assets/img/'+image+'';
                     cardImg = cardId.appendChild(cardImg);
             
@@ -238,10 +246,7 @@ function TMs () {
             });
     };
 
-function News () {
-    document.querySelector('.container').innerHTML = "";
-    document.querySelector('.container').innerHTML = "Prout"
-}
+
 
 
 //     console.log(document.querySelector(element).classList != 'active');
