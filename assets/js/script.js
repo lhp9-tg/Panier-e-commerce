@@ -51,13 +51,15 @@ function pokeballs () {
                 let price = element.price;
 
                 let anchor = document.createElement('div');
-                anchor.innerHTML = '<div class="card-body text-center" id='+id+'>';
+                anchor.innerHTML = '<div class="card text-center"><div class="card-body text-center" id='+id+'></div></div>';
+                anchor.className = 'col-sm-3';
+                
                 
                 if (category == 'Pokeballs') {
-                    document.querySelector('.banner').innerHTML = ``
-                    
-                    anchor.className = 'item card text-center';
+
                     anchor = document.querySelector('.row').appendChild(anchor);
+
+                    document.querySelector('.banner').innerHTML = ``
                     
                     let cardId = document.getElementById(id);
                     
@@ -67,12 +69,14 @@ function pokeballs () {
                     cardImg.alt = name;
                     cardImg = cardId.appendChild(cardImg);
 
-                    let cardName = document.createElement('div');
+                    let cardName = document.createElement('p');
                     cardName.textContent = name;
+                    cardName.className = 'card-title';
                     cardName = cardId.appendChild(cardName);
 
-                    let cardOverview = document.createElement('div');
+                    let cardOverview = document.createElement('p');
                     cardOverview.textContent = overview;
+                    cardOverview.className = 'card-text';
                     cardOverview = cardId.appendChild(cardOverview);
 
                     let cardInput = document.createElement('input');
@@ -82,6 +86,7 @@ function pokeballs () {
                     cardInput = cardId.appendChild(cardInput);
 
                     let cardPrice = document.createElement('div');
+                    cardPrice.className = 'card-footer'
                     cardPrice.textContent = price+'¥';
                     cardPrice = cardId.appendChild(cardPrice);
                 }
@@ -106,37 +111,43 @@ function battleItems () {
                 let price = element.price;
 
                 let anchor = document.createElement('div');
-                anchor.innerHTML = '<div class="card-body" id='+id+'>';
+                anchor.innerHTML = '<div class="card text-center"><div class="card-body text-center" id='+id+'></div></div>';
+                anchor.className = 'col-sm-3';
                 
                     if (category == 'Battle items') {
+
                         document.querySelector('.banner').innerHTML = ``
 
-
-                        anchor.className = 'card text-center';
                         anchor = document.querySelector('.row').appendChild(anchor);
     
                         let cardId = document.getElementById(id);
 
                         let cardImg = document.createElement('img');
-                        cardImg.className = 'cardImg '
-                        cardImg.src = 'assets/img/'+image+'';
-                        cardImg = cardId.appendChild(cardImg);
+                    cardImg.className = 'cardImg '
+                    cardImg.src = 'assets/img/'+image+'';
+                    cardImg.alt = name;
+                    cardImg = cardId.appendChild(cardImg);
 
-                        let cardName = document.createElement('div');
-                        cardName.textContent = name;
-                        cardName = cardId.appendChild(cardName);
+                    let cardName = document.createElement('p');
+                    cardName.textContent = name;
+                    cardName.className = 'card-title';
+                    cardName = cardId.appendChild(cardName);
 
-                        let cardOverview = document.createElement('div');
-                        cardOverview.textContent = overview;
-                        cardOverview = cardId.appendChild(cardOverview);
+                    let cardOverview = document.createElement('p');
+                    cardOverview.textContent = overview;
+                    cardOverview.className = 'card-text';
+                    cardOverview = cardId.appendChild(cardOverview);
 
-                        let cardInput = document.createElement('input');
-                        cardInput.placeholder = 'Quantité';
-                        cardInput = cardId.appendChild(cardInput);
+                    let cardInput = document.createElement('input');
+                    cardInput.placeholder = 'Quantité';
+                    cardInput.minLength = 1;
+                    cardInput.maxLength = 2;
+                    cardInput = cardId.appendChild(cardInput);
 
-                        let cardPrice = document.createElement('div');
-                        cardPrice.textContent = price+'¥';
-                        cardPrice = cardId.appendChild(cardPrice);
+                    let cardPrice = document.createElement('div');
+                    cardPrice.className = 'card-footer'
+                    cardPrice.textContent = price+'¥';
+                    cardPrice = cardId.appendChild(cardPrice);
                     }
                 });
             });
@@ -159,12 +170,12 @@ function medicine () {
                 let price = element.price;
 
                 let anchor = document.createElement('div');
-                anchor.innerHTML = '<div class="card-body" id='+id+'>';
+                anchor.innerHTML = '<div class="card text-center"><div class="card-body text-center" id='+id+'></div></div>';
+                anchor.className = 'col-sm-3';
 
                     if (category == 'Medicine') {
                         document.querySelector('.banner').innerHTML = ``
 
-                        anchor.className = 'card text-center';
                         anchor = document.querySelector('.row').appendChild(anchor);
     
                         let cardId = document.getElementById(id);
@@ -172,21 +183,27 @@ function medicine () {
                         let cardImg = document.createElement('img');
                         cardImg.className = 'cardImg '
                         cardImg.src = 'assets/img/'+image+'';
+                        cardImg.alt = name;
                         cardImg = cardId.appendChild(cardImg);
 
-                        let cardName = document.createElement('div');
+                        let cardName = document.createElement('p');
                         cardName.textContent = name;
+                        cardName.className = 'card-title';
                         cardName = cardId.appendChild(cardName);
 
-                        let cardOverview = document.createElement('div');
+                        let cardOverview = document.createElement('p');
                         cardOverview.textContent = overview;
+                        cardOverview.className = 'card-text';
                         cardOverview = cardId.appendChild(cardOverview);
 
                         let cardInput = document.createElement('input');
                         cardInput.placeholder = 'Quantité';
+                        cardInput.minLength = 1;
+                        cardInput.maxLength = 2;
                         cardInput = cardId.appendChild(cardInput);
 
                         let cardPrice = document.createElement('div');
+                        cardPrice.className = 'card-footer'
                         cardPrice.textContent = price+'¥';
                         cardPrice = cardId.appendChild(cardPrice);
                     }
@@ -211,34 +228,40 @@ function TMs () {
                 let price = element.price;
 
                 let anchor = document.createElement('div');
-                anchor.innerHTML = '<div class="card-body" id='+id+'>';
+                anchor.innerHTML = '<div class="card text-center"><div class="card-body text-center" id='+id+'></div></div>';
+                anchor.className = 'col-sm-3';
 
                 if (category == 'TMs') {
                     document.querySelector('.banner').innerHTML = ``
 
-                    anchor.className = 'card text-center';
                     anchor = document.querySelector('.row').appendChild(anchor);
 
                     let cardId = document.getElementById(id);
 
                     let cardImg = document.createElement('img');
-                    cardImg.className = 'cardImg1';
+                    cardImg.className = 'cardImg '
                     cardImg.src = 'assets/img/'+image+'';
+                    cardImg.alt = name;
                     cardImg = cardId.appendChild(cardImg);
-            
-                    let cardName = document.createElement('div');
+
+                    let cardName = document.createElement('p');
                     cardName.textContent = name;
+                    cardName.className = 'card-title';
                     cardName = cardId.appendChild(cardName);
-            
-                    let cardOverview = document.createElement('div');
+
+                    let cardOverview = document.createElement('p');
                     cardOverview.textContent = overview;
+                    cardOverview.className = 'card-text';
                     cardOverview = cardId.appendChild(cardOverview);
-            
+
                     let cardInput = document.createElement('input');
                     cardInput.placeholder = 'Quantité';
+                    cardInput.minLength = 1;
+                    cardInput.maxLength = 2;
                     cardInput = cardId.appendChild(cardInput);
-            
+
                     let cardPrice = document.createElement('div');
+                    cardPrice.className = 'card-footer'
                     cardPrice.textContent = price+'¥';
                     cardPrice = cardId.appendChild(cardPrice);
                 }
