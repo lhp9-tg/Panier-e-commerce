@@ -38,6 +38,9 @@ body {
   background-color: green;
 }
 
+.attention {
+    background-color: red;
+}
 .nav{
   font-family: 'Roboto', sans-serif;
 }
@@ -151,4 +154,17 @@ li {
 
 .modal button img {
   width: 30px;
+}
+
+.card-title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.card-text {
+    color: gray;
+}
+
+.bg-info {
+ opacity: 0.7;
 }

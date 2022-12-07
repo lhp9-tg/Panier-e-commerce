@@ -22,7 +22,7 @@
       </div>
       <div>
         <button class="btn col-sm-2 m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><img
-            src="assets/img/panier.png" alt=""></button>
+           id="ShoppingCart" src="assets/img/panier.png" alt=""></button>
       </div>
     </div>
 
@@ -67,37 +67,56 @@
     </div>
   </div>
 
+<!-- toasts 1-->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="assets/img/icon.png" class="rounded me-2" alt="...">
+      <strong class="me-auto text-white">Product added to cart !</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+<!-- toasts 2-->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast1" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header attention">
+      <img src="assets/img/icon.png" class="rounded me-2" alt="...">
+      <strong class="me-auto text-white">! Invalid content !</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+
+
   <main class="container">  
 
   <div class="banner">
       <div class="slider-container">
-        <span><img class="xmaspikachu" src="assets/img/pikachu_noel.png" alt=""></span>
+        <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>
         <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
         <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
         <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-        <span><img class="xmaspikachu" src="assets/img/pikachu_noel.png" alt=""></span>
-        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
+        <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
         <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
         <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-        <span><img class="xmaspikachu" src="assets/img/pikachu_noel.png" alt=""></span>
-        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
+        <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
         <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
         <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-        <span><img class="xmaspikachu" src="assets/img/pikachu_noel.png" alt=""></span>
-        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
+        <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
         <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
         <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-        <span><img class="xmaspikachu" src="assets/img/pikachu_noel.png" alt=""></span>
-        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
+        <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
         <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
         <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
       </div>
     </div>
 
-    <div class="row" data-masonry='{"percentPosition": true }'>
+    <div class="row mt-4" data-masonry='{"percentPosition": true }'>
       <div class="col-sm-3">
         <div class="card border-danger">
-          <img src="assets/img/pokemonholidayspecial.jpg" class="img-fluid card-img-top" alt="pokemon holiday special">
+          <img src="assets/img/pokemonholidayspécial.jpg" class="img-fluid card-img-top" alt="pokemon holiday special">
           <div class="card-body">
             <p class="card-text">Check out our exciting holiday sales !</p>
             <a href="" class="btn btn-primary">Learn more</a>
@@ -226,17 +245,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
-  <script>
-    const toastTrigger = document.getElementById('liveToastBtn')
-    const toastLiveExample = document.getElementById('liveToast')
-    if (toastTrigger) {
-      toastTrigger.addEventListener('click', () => {
-        const toast = new bootstrap.Toast(toastLiveExample)
-
-        toast.show()
-      })
-    }
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
     integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
     async></script>
