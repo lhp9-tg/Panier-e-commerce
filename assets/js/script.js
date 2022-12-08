@@ -157,7 +157,6 @@ function pokeballs() {
         });
 };
 
-
 function battleItems() {
     document.querySelector('.container').innerHTML = `<div class="banner">
     <div class="slider-container bg-secondary">
@@ -537,21 +536,6 @@ function News() {
 
 let regex = /^[1-9]{1}[0-9]{0,1}$/;
 
-// window.addEventListener('keydown', element => {
-//     if ((element.key === 'Enter')) {
-//         if (regex.test(element.target.value)) {
-//             let quantity = element.target.value;
-//             let id = element.target.parentNode.id;
-//             element.target.value = "";
-//         } 
-//         else {
-//             console.log("Veuillez saisir un élément valide");
-//             // message.textContent = "Veuillez saisir un élément valide";
-//         };
-//     };
-// });
-
-
 window.addEventListener('click', element => {
     if ((element.target.classList.contains('add'))) {
         if (regex.test(element.target.previousSibling.value)) {
@@ -576,20 +560,6 @@ window.addEventListener('click', element => {
             const toastLiveExample = document.getElementById('liveToast1')
             const toast = new bootstrap.Toast(toastLiveExample)
             toast.show()
-            // message.textContent = "Veuillez saisir un élément valide";
         };
     };
 });
-
-
-
-// const toastTrigger = document.getElementById('liveToastBtn')
-//     const toastLiveExample = document.getElementById('liveToast')
-//     if (toastTrigger) {
-//       toastTrigger.addEventListener('click', () => {
-//         const toast = new bootstrap.Toast(toastLiveExample)
-
-//         toast.show()
-//       })
-//     }
-
