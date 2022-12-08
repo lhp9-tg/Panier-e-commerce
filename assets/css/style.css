@@ -138,6 +138,11 @@ button {
 }
 }
 
+.modal-body ul {
+  margin: 0;
+  padding: 0;
+}
+
 .cartItem {
 
   width: 38px;
@@ -162,8 +167,8 @@ li {
   width: 30px;
 }
 
-.modalQuantityInput {
-  width: 3rem;
+.modalQuantity {
+  width: 2rem;
 }
 
 .card-title {
@@ -189,6 +194,10 @@ li {
   color: grey;
 }
 
+.modal-title {
+  margin-left: 2.8rem;
+}
+
 @media only screen and (max-width: 600px){
   .pikanews {
     margin: 0.4rem;
@@ -196,4 +205,9 @@ li {
   .xmaspikachu2 {
     width: 35px;
   }
+
+  .modal-title {
+    margin: 0;
+  }
 }
+

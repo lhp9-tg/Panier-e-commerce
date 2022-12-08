@@ -88,7 +88,7 @@ function pokeballs() {
       <span class="h5"> POKEBALLS CATEGORY </span>
     </div>
   </div>`;
-    
+
     let itemContainer = document.createElement('div');
     itemContainer.className = "thomas";
     itemContainer = document.querySelector('.container').appendChild(itemContainer);
@@ -532,15 +532,11 @@ function News() {
     document.querySelector('.container').innerHTML = "";
 }
 
-// UX
 
+// Affichage du panier
 let regex = /^[1-9]{1}[0-9]{0,1}$/;
- 
-
 window.addEventListener('click', element => {
-
-    // Affichage du panier
-
+    // Modal panier
     if (element.target.classList.contains('add')) {
         if (regex.test(element.target.previousSibling.value)) {
 
@@ -548,12 +544,12 @@ window.addEventListener('click', element => {
             let quantity = element.target.previousSibling.value;
 
             let modal = document.querySelector('.modal-body ul');
-            
+
             let modalLine = document.createElement('li');
             modalLine = modal.appendChild(modalLine);
 
             let modalImage = document.createElement('div');
-            modalImage.innerHTML = '<img class="cartItem" src="assets/img/'+element.target.dataset.image+'"/>';
+            modalImage.innerHTML = '<img class="cartItem" src="assets/img/' + element.target.dataset.image + '"/>';
             modalImage = modalLine.appendChild(modalImage);
 
             let modalName = document.createElement('div');
@@ -562,13 +558,23 @@ window.addEventListener('click', element => {
             modalName = modalLine.appendChild(modalName);
 
             let modalPrice = document.createElement('div');
-            modalPrice.className = 'modalPrice';
-            modalPrice.textContent = element.target.dataset.price+'¥';
+            modalPrice.className = 'modalPrice'
+            modalPrice.innerHTML = `(<span class="total">${element.target.dataset.price}</span>¥)`;
             modalPrice = modalLine.appendChild(modalPrice);
 
-            let modalQuantity = document.createElement('div');
+            // modalTotal
+            let modalTotal = document.createElement('div');
+            modalTotal.className = 'modalTotal fw-bold text-success';
+            modalTotal.innerHTML = `<span class="itemsTotal">${element.target.dataset.price * quantity}</span>¥`
+            modalTotal = modalLine.appendChild(modalTotal);
+
+
+            //valeur de quantity en input
+            let modalQuantity = document.createElement('input');
             modalQuantity.className = 'modalQuantity';
-            modalQuantity.textContent = quantity;
+            modalQuantity.type = "text";
+            modalQuantity.disabled = true;
+            modalQuantity.value = quantity;
             modalQuantity = modalLine.appendChild(modalQuantity);
 
             let editBtn = document.createElement('button');
@@ -585,95 +591,76 @@ window.addEventListener('click', element => {
             removeBtn.innerHTML = '<img class="Supprimer" src="https://img.icons8.com/fluency/38/null/delete-forever.png"/>';
             removeBtn = modalLine.appendChild(removeBtn);
 
+            // toast
             const toastLiveExample = document.getElementById('liveToast')
             const toast = new bootstrap.Toast(toastLiveExample)
             toast.show()
 
+            // icon shopping cart
             document.querySelector('#ShoppingCart').src = "assets/img/panier-fill.png"
+
+            // message cart empty
+            document.querySelector('.deleteAll').innerText = ''
 
         }
         else {
+            // toast error
             const toastLiveExample = document.getElementById('liveToast1')
             const toast = new bootstrap.Toast(toastLiveExample)
             toast.show()
         };
     };
-        // Edition du panier 
 
     // Edition 
-
-    if (element.target.classList == 'Valider') {
-        let modif = element.target.parentNode.previousSibling.value;
-        let quantityDiv = document.createElement('div');
-        quantityDiv.className = 'modalQuantity';
-        quantityDiv.textContent = modif;
-        element.target.parentNode.previousSibling.replaceWith(quantityDiv);
-        console.log(element.target.parentNode.parentNode.firstChild);
-        element.target.src = "https://img.icons8.com/color-glass/38/null/edit--v1.png"
-    };
-
-
     if (element.target.classList == 'Editer') {
-        let quantityInput = document.createElement('input');
-        quantityInput.classList = 'modalQuantityInput'
-        quantityInput.value = element.target.parentNode.previousSibling.textContent;
-        element.target.parentNode.previousSibling.replaceWith(quantityInput);
-        console.log(element.target);
         element.target.src = "https://img.icons8.com/color-glass/38/null/verified-account--v1.png";
-        element.target.classList = 'Valider'
-        }
+        element.target.className = 'Valider';
+        let modif = element.target.parentNode.previousSibling;
+        modif.disabled = false;
 
-    //Suppression
+    } else if (element.target.classList == 'Valider') {
+        let modif = element.target.parentNode.previousSibling;
+        modif.disabled = true;
+        element.target.src = "https://img.icons8.com/color-glass/38/null/edit--v1.png"
+        element.target.className = 'Editer';
+
+        // Recalcul du prix
+        let unitPrice = element.target.parentNode.parentNode.children[2].children[0].innerText;
+        let total = element.target.parentNode.parentNode.children[3]
+        total.innerHTML = `<span class="itemsTotal">${unitPrice * modif.value}</span>¥`;
+        console.log(unitPrice * modif.value);
+
+    };
 
     if (element.target.classList.contains('Supprimer')) {
         element.target.parentNode.parentNode.remove();
     }
-
-        // Sauvegarde dans un JSON 
-
-//         let array = document.querySelectorAll('li');
-
-//         let listTextContent = [];
-//         array.forEach(element => {
-//             console.log(element.textContent);
-//             listTextContent.push(element.textContent);
-//         });
-//         console.log(listTextContent)
-
-//         localStorage.setItem("list", JSON.stringify(listTextContent));
-
 });
 
-// Initialisation - Récupération des données JSON
+//vider le panier + icon panier vide 
+let deleteAll = document.querySelector('#deleteAll');
+deleteAll.addEventListener('click', element => {
+    document.querySelector('.modal-body ul').innerHTML = "";
+    document.querySelector('.deleteAll').innerText = 'Your Shopping Cart is empty';
+    document.querySelector('#ShoppingCart').src = 'assets/img/panier.png';
+})
 
-// let local = JSON.parse(localStorage.getItem('list'));
+//CHECKOUT
 
-// if (local != null) {
-//     local.forEach(element => {
+let items = document.querySelectorAll('.itemsTotal');
 
-//         let flex = document.createElement('div');
-//         flex.id = 'flex';
-//         flex = list.appendChild(flex);
+document.querySelector('.checkOut').addEventListener('click', function () {
+    items.forEach(element => {
+        let total = 0;
 
-//         let newLi = document.createElement('li');
-//         newLi.textContent = element;
-//         newLi = flex.appendChild(newLi);
-
-//         let flexBtn = document.createElement('div');
-//         flexBtn = flex.appendChild(flexBtn);
-
-//         let removeBtn = document.createElement('button');
-//         removeBtn.classList.add("remove");
-//         removeBtn.type = 'button';
-
-//         removeBtn.textContent = "-";
-//         removeBtn = flexBtn.appendChild(removeBtn);
-
-//         let editBtn = document.createElement('button');
-//         editBtn.classList.add('edit');
-//         editBtn.type = 'button';
-
-//         editBtn.textContent = 'Edit';
-//         editBtn = flexBtn.appendChild(editBtn);
-//     });
-// };
+        for (let i = 0; i < items.length; i++) {
+            if (parseInt(items[i].innerText)) {
+                total += parseInt(items[i].innerText);
+                console.log(total);
+            }
+           
+        }
+        
+    })
+    
+})
