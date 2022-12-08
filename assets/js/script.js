@@ -37,23 +37,55 @@ window.addEventListener('click', event => {
 
 function pokeballs() {
     document.querySelector('.container').innerHTML = `<div class="banner">
-    <div class="slider-container bg-info">
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
+    <div class="slider-container bg-primary">
+      <span><img class="xmaspikachu" src="assets/img/pokeball.png" alt=""></span>
+
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/greatball.png" alt=""></span>
+
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/ultraball.png" alt=""></span>
+
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/healball.png" alt=""></span>
+
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/diveball.png" alt=""></span>        
+      
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/duskball.png" alt=""></span>
+
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/netball.png" alt=""></span>        
+      
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/luxuryball.png" alt=""></span>
+
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/pokeball.png" alt=""></span>
+
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/greatball.png" alt=""></span>
+
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/ultraball.png" alt=""></span>
+
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/healball.png" alt=""></span>
+
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/diveball.png" alt=""></span>        
+      
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/duskball.png" alt=""></span>
+
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/netball.png" alt=""></span>        
+      
+      <span class="h5"> POKEBALLS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/luxuryball.png" alt=""></span>
+
+      <span class="h5"> POKEBALLS CATEGORY </span>
     </div>
   </div>`;
     
@@ -128,23 +160,55 @@ function pokeballs() {
 
 function battleItems() {
     document.querySelector('.container').innerHTML = `<div class="banner">
-    <div class="slider-container bg-info">
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
+    <div class="slider-container bg-secondary">
+      <span><img class="xmaspikachu" src="assets/img/direhit.png" alt=""></span>
+
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/guardspec.png" alt=""></span>
+
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/xaccuracy.png" alt=""></span>
+
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/xattack.png" alt=""></span>
+
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/xdefense.png" alt=""></span>        
+      
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/xsp.atk.png" alt=""></span>
+
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/xsp.def.png" alt=""></span>        
+      
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/xspeed.png" alt=""></span>
+
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/direhit.png" alt=""></span>
+
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/guardspec.png" alt=""></span>
+
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/xaccuracy.png" alt=""></span>
+
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/xattack.png" alt=""></span>
+
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/xdefense.png" alt=""></span>        
+      
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/xsp.atk.png" alt=""></span>
+
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/xsp.def.png" alt=""></span>        
+      
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
+      <span><img class="xmaspikachu" src="assets/img/xspeed.png" alt=""></span>
+
+      <span class="h5"> BATTLE ITEMS CATEGORY </span>
     </div>
   </div>`;
 
@@ -220,23 +284,53 @@ function battleItems() {
 
 function medicine() {
     document.querySelector('.container').innerHTML = `<div class="banner">
-    <div class="slider-container bg-info">
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
+    <div class="slider-container bg-success">
+    <span><img class="xmaspikachu" src="assets/img/antidote.png" alt=""></span>
+
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/awakening.png" alt=""></span>
+
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/bunrheal.png" alt=""></span>
+
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/iceheal.png" alt=""></span>
+
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/fullrestore.png" alt=""></span>        
+    
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/potion.png" alt=""></span>
+
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/superpotion.png" alt=""></span>        
+    
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/hyperpotion.png" alt=""></span>
+
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/maxpotion.png" alt=""></span>
+
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/ether.png" alt=""></span>
+
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/maxether.png" alt=""></span>
+
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/elixir.png" alt=""></span>
+
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/maxelixir.png" alt=""></span>        
+    
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/revive.png" alt=""></span>
+
+    <span class="h5"> MEDICINE CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/maxrevive.png" alt=""></span>        
+
+    <span class="h5"> MEDICINE CATEGORY </span>
+
     </div>
   </div>`;
 
@@ -311,22 +405,59 @@ function medicine() {
 function TMs() {
     document.querySelector('.container').innerHTML = `<div class="banner">
     <div class="slider-container bg-info">
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmaspikachu" src="assets/img/pikachu noel.png" alt=""></span>        <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
-      <span><img class="xmas" src="assets/img/icon.png" alt=""></span>
-      <span class="h5"> WELCOME TO THE POKEMON CENTER </span>
+    <span><img class="xmaspikachu" src="assets/img/tmdragon.png" alt=""></span>
+
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmelectric.png" alt=""></span>
+
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmfairy.png" alt=""></span>
+
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmfire.png" alt=""></span>
+
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmflying.png" alt=""></span>        
+    
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmgrass.png" alt=""></span>
+
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmice.png" alt=""></span>        
+    
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmpoison.png" alt=""></span>
+
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmwater.png" alt=""></span>
+
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmdragon.png" alt=""></span>
+
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmelectric.png" alt=""></span>
+
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmfairy.png" alt=""></span>
+
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmfire.png" alt=""></span>
+
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmflying.png" alt=""></span>        
+    
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmgrass.png" alt=""></span>
+
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmice.png" alt=""></span>        
+    
+    <span class="h5"> TMS CATEGORY </span>
+    <span><img class="xmaspikachu" src="assets/img/tmpoison.png" alt=""></span>
+
+    <span class="h5"> TMS CATEGORY </span>
+    
+
     </div>
   </div>`;
 
