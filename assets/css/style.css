@@ -162,6 +162,10 @@ li {
   width: 30px;
 }
 
+.modalQuantityInput {
+  width: 3rem;
+}
+
 .card-title {
     font-size: large;
     font-weight: bold;

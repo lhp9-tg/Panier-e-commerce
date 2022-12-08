@@ -535,31 +535,145 @@ function News() {
 // UX
 
 let regex = /^[1-9]{1}[0-9]{0,1}$/;
+ 
 
 window.addEventListener('click', element => {
-    if ((element.target.classList.contains('add'))) {
+
+    // Affichage du panier
+
+    if (element.target.classList.contains('add')) {
         if (regex.test(element.target.previousSibling.value)) {
 
             let id = element.target.parentNode.id;
             let quantity = element.target.previousSibling.value;
 
-            let modal = document.querySelector('.modal-body');
+            let modal = document.querySelector('.modal-body ul');
+            
             let modalLine = document.createElement('li');
-            modalLine.innerHTML = `
-            <div><img class="cartItem" src="assets/img/${element.target.dataset.image}"/></div><div class="h5 text">${element.target.dataset.name}</div>${element.target.dataset.price}¥<div>x${quantity}</div><button type="button" class="btn"><img class="Editer" src="https://img.icons8.com/color-glass/38/null/edit--v1.png"/></button><button type="button" class="btn"><img class="Supprimer" src="https://img.icons8.com/fluency/38/null/delete-forever.png"/></button></li>`;
             modalLine = modal.appendChild(modalLine);
+
+            let modalImage = document.createElement('div');
+            modalImage.innerHTML = '<img class="cartItem" src="assets/img/'+element.target.dataset.image+'"/>';
+            modalImage = modalLine.appendChild(modalImage);
+
+            let modalName = document.createElement('div');
+            modalName.className = 'h5 text';
+            modalName.textContent = element.target.dataset.name
+            modalName = modalLine.appendChild(modalName);
+
+            let modalPrice = document.createElement('div');
+            modalPrice.className = 'modalPrice';
+            modalPrice.textContent = element.target.dataset.price+'¥';
+            modalPrice = modalLine.appendChild(modalPrice);
+
+            let modalQuantity = document.createElement('div');
+            modalQuantity.className = 'modalQuantity';
+            modalQuantity.textContent = quantity;
+            modalQuantity = modalLine.appendChild(modalQuantity);
+
+            let editBtn = document.createElement('button');
+            editBtn.classList.add('btn');
+            editBtn.classList.add('btn-light');
+            editBtn.type = 'button';
+            editBtn.innerHTML = '<img class="Editer" src="https://img.icons8.com/color-glass/38/null/edit--v1.png"/>';
+            editBtn = modalLine.appendChild(editBtn);
+
+            let removeBtn = document.createElement('button');
+            removeBtn.classList.add("btn");
+            removeBtn.classList.add('btn-light');
+            removeBtn.type = 'button';
+            removeBtn.innerHTML = '<img class="Supprimer" src="https://img.icons8.com/fluency/38/null/delete-forever.png"/>';
+            removeBtn = modalLine.appendChild(removeBtn);
 
             const toastLiveExample = document.getElementById('liveToast')
             const toast = new bootstrap.Toast(toastLiveExample)
             toast.show()
 
             document.querySelector('#ShoppingCart').src = "assets/img/panier-fill.png"
+
         }
         else {
-            console.log("Veuillez saisir un élément valide");
             const toastLiveExample = document.getElementById('liveToast1')
             const toast = new bootstrap.Toast(toastLiveExample)
             toast.show()
         };
     };
+        // Edition du panier 
+
+    // Edition 
+
+    if (element.target.classList == 'Valider') {
+        let modif = element.target.parentNode.previousSibling.value;
+        let quantityDiv = document.createElement('div');
+        quantityDiv.className = 'modalQuantity';
+        quantityDiv.textContent = modif;
+        element.target.parentNode.previousSibling.replaceWith(quantityDiv);
+        console.log(element.target.parentNode.parentNode.firstChild);
+        element.target.src = "https://img.icons8.com/color-glass/38/null/edit--v1.png"
+    };
+
+
+    if (element.target.classList == 'Editer') {
+        let quantityInput = document.createElement('input');
+        quantityInput.classList = 'modalQuantityInput'
+        quantityInput.value = element.target.parentNode.previousSibling.textContent;
+        element.target.parentNode.previousSibling.replaceWith(quantityInput);
+        console.log(element.target);
+        element.target.src = "https://img.icons8.com/color-glass/38/null/verified-account--v1.png";
+        element.target.classList = 'Valider'
+        }
+
+    //Suppression
+
+    if (element.target.classList.contains('Supprimer')) {
+        element.target.parentNode.parentNode.remove();
+    }
+
+        // Sauvegarde dans un JSON 
+
+//         let array = document.querySelectorAll('li');
+
+//         let listTextContent = [];
+//         array.forEach(element => {
+//             console.log(element.textContent);
+//             listTextContent.push(element.textContent);
+//         });
+//         console.log(listTextContent)
+
+//         localStorage.setItem("list", JSON.stringify(listTextContent));
+
 });
+
+// Initialisation - Récupération des données JSON
+
+// let local = JSON.parse(localStorage.getItem('list'));
+
+// if (local != null) {
+//     local.forEach(element => {
+
+//         let flex = document.createElement('div');
+//         flex.id = 'flex';
+//         flex = list.appendChild(flex);
+
+//         let newLi = document.createElement('li');
+//         newLi.textContent = element;
+//         newLi = flex.appendChild(newLi);
+
+//         let flexBtn = document.createElement('div');
+//         flexBtn = flex.appendChild(flexBtn);
+
+//         let removeBtn = document.createElement('button');
+//         removeBtn.classList.add("remove");
+//         removeBtn.type = 'button';
+
+//         removeBtn.textContent = "-";
+//         removeBtn = flexBtn.appendChild(removeBtn);
+
+//         let editBtn = document.createElement('button');
+//         editBtn.classList.add('edit');
+//         editBtn.type = 'button';
+
+//         editBtn.textContent = 'Edit';
+//         editBtn = flexBtn.appendChild(editBtn);
+//     });
+// };
