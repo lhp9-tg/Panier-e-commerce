@@ -832,3 +832,10 @@ document.querySelector('.checkOut').addEventListener('click', function () {
     document.querySelector('.checkOutTotal').innerText = 'Total = '+CheckOutArray.reduce((a, b) => a + b, 0)+'¥'; 
 })
 
+// popup
+window.onload = function () {
+    OpenBootstrapPopup();
+};
+function OpenBootstrapPopup() {
+    $("#simpleModal").modal('show');
+}
