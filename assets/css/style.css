@@ -219,3 +219,41 @@ li {
 .pikapopup {
   width: 300px;
 }
+
+.col-sm-3 a {
+  animation: bounce2 0.2s ease infinite alternate;
+}
+
+@keyframes bounce2 {
+  from {
+      transform: translateY(0);
+  }
+
+  to {
+      transform: translateY(-2px);
+  }
+}
+
+.one {
+  background-color: rgb(252, 87, 87);
+}
+
+.two {
+  background-color: rgb(184, 114, 249);
+}
+
+.three {
+  background-color: rgb(127, 127, 250);
+}
+
+.four {
+  background-color: rgb(45, 222, 110);
+}
+
+.five {
+  background-color: pink;
+}
+
+.six {
+  background-color: rgb(89, 227, 227);
+}
