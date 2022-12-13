@@ -491,6 +491,35 @@ function News() {
     document.querySelector('.container').innerHTML = "";
 }
 
+// Icone du panier 
+
+function fillOrNot() {
+    let checkcontent = document.querySelectorAll('.modal-body ul li');
+    if (checkcontent.length != 0) {
+        document.querySelector('#ShoppingCart').src = "assets/img/panier-fill.png";
+        document.querySelector('.deleteAll').innerText = '';
+    }
+    else {
+        document.querySelector('#ShoppingCart').src = "assets/img/panier.png";
+        document.querySelector('.deleteAll').innerText = 'Your Shopping Cart is empty';
+    };
+};
+
+// Calcul du prix total
+
+function checkout() {
+    let checkcontent = document.querySelectorAll('.modal-body ul li');
+    if (checkcontent.length != 0) {
+        let items = document.querySelectorAll('.itemsTotal');
+        let  CheckOutArray = [];
+        items.forEach(element => CheckOutArray.push(parseInt(element.innerText)));
+        document.querySelector('.checkOutTotal').innerText = 'Total = ' + CheckOutArray.reduce((a, b) => a + b, 0) + '¥';
+    }
+    else {
+        document.querySelector('.checkOutTotal').innerText = '';
+    }
+};
+
 // Panier
 
 let regex = /^[1-9]{1}[0-9]{0,1}$/;
@@ -515,6 +544,9 @@ let regex = /^[1-9]{1}[0-9]{0,1}$/;
 
 window.addEventListener('click', element => {
 
+    fillOrNot();
+    checkout();
+
     // Affichage du panier
 
     if (element.target.classList.contains('add')) {
@@ -534,9 +566,10 @@ window.addEventListener('click', element => {
 
                         if (i == 1) {
                             console.log('Cas n°3 : Doublons');
-                            console.log(element.children[4].value)
                             let changeQuantity = parseInt(element.children[4].value) + parseInt(quantity);
                             element.children[4].value = changeQuantity;
+                            let initialPrice = element.children[2].children[0].textContent;
+                            element.children[3].children[0].textContent = initialPrice * changeQuantity;
                         }
                     }
 
@@ -660,11 +693,6 @@ window.addEventListener('click', element => {
             const toast = new bootstrap.Toast(toastLiveExample)
             toast.show()
 
-            // Icone du panier rempli
-
-            document.querySelector('#ShoppingCart').src = "assets/img/panier-fill.png"
-
-
         }
         else {
 
@@ -674,6 +702,8 @@ window.addEventListener('click', element => {
             const toast = new bootstrap.Toast(toastLiveExample)
             toast.show()
         };
+        fillOrNot();
+        checkout();
     };
 
     // Edition du panier 
@@ -696,7 +726,6 @@ window.addEventListener('click', element => {
         let unitPrice = element.target.parentNode.parentNode.children[2].children[0].innerText;
         let total = element.target.parentNode.parentNode.children[3]
         total.innerHTML = `<span class="itemsTotal">${unitPrice * modif.value}</span>¥`;
-
     };
 
     // Suppression
@@ -709,11 +738,9 @@ window.addEventListener('click', element => {
 
     let deleteAll = document.querySelector('#deleteAll');
     deleteAll.addEventListener('click', () => {
-        document.querySelector('#ShoppingCart').src = 'assets/img/panier.png';
         document.querySelector('.modal-body ul').innerHTML = "";
-        document.querySelector('.deleteAll').innerHTML = '<p>Your Shopping Cart is empty</p>';
+        localStorage.clear();
     });
-
 
     // Vider l'input des cards
 
@@ -749,6 +776,8 @@ window.addEventListener('click', element => {
         localStorage.setItem("panier", JSON.stringify(cart));
 
     };
+    fillOrNot();
+    checkout();
 });
 
 // Initialisation - Récupération des données JSON
@@ -820,19 +849,11 @@ if (local != null) {
 
     });
 };
-
-//CHECKOUT
-document.querySelector('.checkOut').addEventListener('click', function () {
-    let items = document.querySelectorAll('.itemsTotal');
-    const CheckOutArray = []; 
-    items.forEach(element => CheckOutArray.push(parseInt(element.innerText)));
-    console.log(CheckOutArray)
- 
-    console.log(CheckOutArray.reduce((a, b) => a + b, 0));
-    document.querySelector('.checkOutTotal').innerText = 'Total = '+CheckOutArray.reduce((a, b) => a + b, 0)+'¥'; 
-})
+fillOrNot();
+checkout();
 
 // popup
+
 window.onload = function () {
     OpenBootstrapPopup();
 };
@@ -841,6 +862,6 @@ function OpenBootstrapPopup() {
 }
 
 // Tooltips
+
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-

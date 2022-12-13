@@ -257,3 +257,7 @@ li {
 .six {
   background-color: rgb(89, 227, 227);
 }
+
+.deleteAll {
+  text-align: center
+}
